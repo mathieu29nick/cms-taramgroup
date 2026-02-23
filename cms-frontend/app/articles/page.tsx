@@ -199,6 +199,20 @@ export default function ArticlesPage() {
         flexWrap="wrap"
         mb={3}
       >
+        <Button
+          variant="contained"
+          onClick={() => router.push("/articles/new")}
+        >
+          New Article
+        </Button>
+      </Box>
+
+      <Box
+        display="flex"
+        gap={2}
+        flexWrap="wrap"
+        mb={3}
+      >
         <TextField
           label="Search"
           value={search}
