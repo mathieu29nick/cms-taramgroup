@@ -14,13 +14,21 @@ import {
   Chip,
 } from "@mui/material";
 import {
-  DataGrid,
   GridColDef,
   GridRowSelectionModel,
 } from "@mui/x-data-grid";
 import { useEffect, useMemo, useState } from "react";
 import { apiFetch } from "@/services/api";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
+
+const DataGrid = dynamic(
+  () =>
+    import("@mui/x-data-grid").then(
+      (mod) => mod.DataGrid
+    ),
+  { ssr: false }
+);
 
 export default function ArticlesPage() {
   const router = useRouter();

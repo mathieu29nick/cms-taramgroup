@@ -13,10 +13,10 @@ import {
   ListItemText,
   Divider,
 } from "@mui/material";
+import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 import { apiFetch } from "@/services/api";
 import {
-  PieChart,
   Pie,
   Cell,
   Tooltip,
@@ -32,6 +32,11 @@ interface Article {
   categories: string[];
   createdAt: string;
 }
+
+const PieChart = dynamic(
+  () => import("recharts").then((mod) => mod.PieChart),
+  { ssr: false }
+);
 
 export default function Dashboard() {
   const [articles, setArticles] =
