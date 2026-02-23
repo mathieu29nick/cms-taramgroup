@@ -1,0 +1,18 @@
+[
+  {
+    "id": "notif-1",
+    "articleId": "art-1",
+    "recipients": ["user1@example.com", "user2@example.com"],
+    "subject": "New Article Published: AI Revolution",
+    "sentAt": "2024-01-01T11:00:00.000Z",
+    "status": "sent"
+  },
+  {
+    "id": "notif-2",
+    "articleId": "art-3",
+    "recipients": ["partner@example.com"],
+    "subject": "Marketing Article Update",
+    "sentAt": "2024-03-01T11:00:00.000Z",
+    "status": "sent"
+  }
+]

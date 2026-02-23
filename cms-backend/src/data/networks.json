@@ -1,0 +1,12 @@
+[
+  {
+    "id": "1",
+    "name": "Main Network",
+    "description": "Primary publishing network"
+  },
+  {
+    "id": "2",
+    "name": "Partner Network",
+    "description": "Secondary publishing network"
+  }
+]

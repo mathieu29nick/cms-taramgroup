@@ -5,13 +5,22 @@ import { articleSchema } from '../models/article.schema';
 import { readJSON, writeJSON } from '../utils/file';
 import { v4 as uuid } from 'uuid';
 
+type StatusType = 'draft' | 'published' | 'archived';
+
+interface IdParams {
+  id: string;
+}
+
+interface UpdateStatusBody {
+  status: StatusType;
+}
+
 export const getArticles = async (
   req: AuthRequest,
   res: Response
 ) => {
   let articles = await service.getAll();
 
-  // 🔒 segmentation réseau
   if (req.user?.role === 'editor') {
     articles = articles.filter(
       a => a.network === req.user?.network
@@ -24,9 +33,9 @@ export const getArticles = async (
     category,
     featured,
     search,
-    page = 1,
-    limit = 20
-  } = req.query;
+    page = '1',
+    limit = '20'
+  } = req.query as Record<string, string>;
 
   if (status)
     articles = articles.filter(a => a.status === status);
@@ -36,7 +45,7 @@ export const getArticles = async (
 
   if (category)
     articles = articles.filter(a =>
-      a.categories.includes(category as string)
+      a.categories.includes(category)
     );
 
   if (featured)
@@ -47,8 +56,8 @@ export const getArticles = async (
   if (search)
     articles = articles.filter(
       a =>
-        a.title.includes(search as string) ||
-        a.content.includes(search as string)
+        a.title.includes(search) ||
+        a.content.includes(search)
     );
 
   const start = (Number(page) - 1) * Number(limit);
@@ -58,10 +67,13 @@ export const getArticles = async (
 };
 
 export const getArticle = async (
-  req: AuthRequest,
+  req: AuthRequest<IdParams>,
   res: Response
 ) => {
-  const article = await service.getById(req.params.id);
+  const { id } = req.params;
+
+  const article = await service.getById(id);
+
   if (!article)
     return res.status(404).json({ message: 'Not found' });
 
@@ -80,70 +92,90 @@ export const createArticle = async (
   res: Response
 ) => {
   const parsed = articleSchema.safeParse(req.body);
+
   if (!parsed.success)
     return res.status(400).json(parsed.error);
 
+  const data = parsed.data;
+
   if (req.user?.role === 'editor') {
-    parsed.data.network = req.user.network;
+    data.network = req.user.network;
   }
 
-  const article = await service.create(parsed.data);
+  const article = await service.create(data);
+
   res.status(201).json(article);
 };
 
 export const updateArticle = async (
-  req: AuthRequest,
+  req: AuthRequest<IdParams>,
   res: Response
 ) => {
-  const updated = await service.update(req.params.id, req.body);
-  if (!updated)
+  const { id } = req.params;
+
+  const existing = await service.getById(id);
+
+  if (!existing)
     return res.status(404).json({ message: 'Not found' });
 
   if (
     req.user?.role === 'editor' &&
-    updated.network !== req.user.network
+    existing.network !== req.user.network
   ) {
     return res.status(403).json({ message: 'Forbidden' });
   }
+
+  const updated = await service.update(id, req.body);
 
   res.json(updated);
 };
 
 export const deleteArticle = async (
-  req: AuthRequest,
+  req: AuthRequest<IdParams>,
   res: Response
 ) => {
-  await service.remove(req.params.id);
+  const { id } = req.params;
+
+  await service.remove(id);
+
   res.json({ message: 'Deleted' });
 };
 
 export const updateStatus = async (
-  req: AuthRequest,
+  req: AuthRequest<IdParams, any, UpdateStatusBody>,
   res: Response
 ) => {
-  const updated = await service.updateStatus(
-    req.params.id,
-    req.body.status
-  );
+  const { id } = req.params;
+  const { status } = req.body;
+
+  const updated = await service.updateStatus(id, status);
+
+  if (!updated)
+    return res.status(404).json({ message: 'Not found' });
+
   res.json(updated);
 };
 
 export const notifyArticle = async (
-  req: AuthRequest,
+  req: AuthRequest<IdParams>,
   res: Response
 ) => {
+  const { id } = req.params;
+  const { recipients, subject } = req.body;
+
   const notifications = await readJSON('notifications.json');
 
   const notification = {
     id: uuid(),
-    articleId: req.params.id,
-    recipients: req.body.recipients,
-    subject: req.body.subject,
+    articleId: id,
+    recipients,
+    subject,
     sentAt: new Date(),
     status: 'sent'
   };
 
   notifications.push(notification);
+
   await writeJSON('notifications.json', notifications);
 
   res.json(notification);

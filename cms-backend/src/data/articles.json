@@ -1,0 +1,44 @@
+[
+  {
+    "id": "art-1",
+    "title": "AI Revolution in 2025",
+    "content": "Artificial intelligence continues to evolve rapidly with new breakthroughs transforming industries worldwide. This article explores trends and predictions for the coming years.",
+    "excerpt": "AI trends and predictions.",
+    "author": "John Doe",
+    "categories": ["cat-1"],
+    "network": "1",
+    "status": "published",
+    "featured": true,
+    "publishedAt": "2024-01-01T10:00:00.000Z",
+    "createdAt": "2024-01-01T09:00:00.000Z",
+    "updatedAt": "2024-01-01T09:00:00.000Z"
+  },
+  {
+    "id": "art-2",
+    "title": "Startup Growth Strategies",
+    "content": "Startups need structured growth strategies to scale successfully. This article explains key frameworks and real-world examples.",
+    "excerpt": "How startups grow effectively.",
+    "author": "Jane Smith",
+    "categories": ["cat-2"],
+    "network": "1",
+    "status": "draft",
+    "featured": false,
+    "publishedAt": null,
+    "createdAt": "2024-02-01T09:00:00.000Z",
+    "updatedAt": "2024-02-01T09:00:00.000Z"
+  },
+  {
+    "id": "art-3",
+    "title": "Digital Marketing Trends",
+    "content": "Digital marketing evolves constantly. Learn about SEO, paid ads, and content marketing strategies that work today.",
+    "excerpt": "Marketing strategies overview.",
+    "author": "Alex Brown",
+    "categories": ["cat-3"],
+    "network": "2",
+    "status": "published",
+    "featured": false,
+    "publishedAt": "2024-03-01T10:00:00.000Z",
+    "createdAt": "2024-03-01T09:00:00.000Z",
+    "updatedAt": "2024-03-01T09:00:00.000Z"
+  }
+]

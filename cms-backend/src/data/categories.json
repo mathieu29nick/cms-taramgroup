@@ -1,0 +1,23 @@
+[
+  {
+    "id": "cat-1",
+    "name": "Technology",
+    "slug": "technology",
+    "description": "Tech related articles",
+    "color": "#3B82F6"
+  },
+  {
+    "id": "cat-2",
+    "name": "Business",
+    "slug": "business",
+    "description": "Business insights",
+    "color": "#10B981"
+  },
+  {
+    "id": "cat-3",
+    "name": "Marketing",
+    "slug": "marketing",
+    "description": "Marketing strategies",
+    "color": "#F59E0B"
+  }
+]
