@@ -48,9 +48,10 @@ export const deleteCategory = async (
   req: AuthRequest<IdParams>,
   res: Response
 ) => {
-  const { id } = req.params;
-
-  await service.deleteCategory(id);
-
-  res.json({ message: 'Deleted' });
+  try {
+    await service.deleteCategory(req.params.id);
+    res.json({ message: "Deleted" });
+  } catch (e: any) {
+    res.status(400).json({ message: e.message });
+  }
 };

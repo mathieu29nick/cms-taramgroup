@@ -1,5 +1,6 @@
 import { readJSON, writeJSON } from '../utils/file';
 import { v4 as uuid } from 'uuid';
+import { getAll as getArticles } from "./article.service";
 
 export const getAllCategories = async () =>
   readJSON('categories.json');
@@ -31,17 +32,18 @@ export const updateCategory = async (id: string, data: any) => {
 };
 
 export const deleteCategory = async (id: string) => {
-  const categories = await getAllCategories();
-  const articles = await readJSON('articles.json');
+  const articles = await getArticles();
 
-  const isUsed = articles.some(a =>
+  const used = articles.some((a: any) =>
     a.categories.includes(id)
   );
 
-  if (isUsed) {
-    throw new Error('Category is used by articles');
+  if (used) {
+    throw new Error("Category is used by articles");
   }
 
+  const categories = await getAllCategories();
   const filtered = categories.filter(c => c.id !== id);
-  await writeJSON('categories.json', filtered);
+
+  await writeJSON("categories.json", filtered);
 };
