@@ -75,6 +75,7 @@ export default function ArticleForm({
   }, [values]);
 
   useEffect(() => {
+    if (!article) return;
     const interval = setInterval(() => {
       if (unsaved) {
         saveDraft();
@@ -82,29 +83,41 @@ export default function ArticleForm({
     }, 30000);
 
     return () => clearInterval(interval);
-  }, [unsaved, values]);
+  }, [unsaved, values, article]);
 
   const saveDraft = async () => {
-    try {
-      await apiFetch("/articles", {
+    const result = schema.safeParse(values);
+
+    if (!result.success) {
+      return;
+    }
+
+    await apiFetch(
+      article
+        ? `/articles/${article.id}`
+        : "/articles",
+      {
         method: article ? "PUT" : "POST",
         body: JSON.stringify({
           ...values,
           status: "draft",
         }),
-      });
+      }
+    );
 
-      setUnsaved(false);
-    } catch (e) {
-      console.error("Auto-save failed");
-    }
+    setUnsaved(false);
   };
 
   const onSubmit = async (data: FormData) => {
-    await apiFetch("/articles", {
-      method: article ? "PUT" : "POST",
-      body: JSON.stringify(data),
-    });
+    await apiFetch(
+      article
+        ? `/articles/${article.id}`
+        : "/articles",
+      {
+        method: article ? "PUT" : "POST",
+        body: JSON.stringify(data),
+      }
+    );
 
     setUnsaved(false);
 
