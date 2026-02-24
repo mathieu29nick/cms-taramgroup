@@ -12,6 +12,8 @@ import {
   ListItemText,
   Button,
   Chip,
+  Snackbar,
+  Alert
 } from "@mui/material";
 import {
   GridColDef,
@@ -34,7 +36,7 @@ const DataGrid = dynamic(
 
 export default function ArticlesPage() {
   const router = useRouter();
-
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selectionModel, setSelectionModel] =
     useState<GridRowSelectionModel>({
       type: "include",
@@ -89,10 +91,15 @@ export default function ArticlesPage() {
   ]);
 
   const handleDelete = async (id: string) => {
-    await apiFetch(`/articles/${id}`, { method: "DELETE" });
-    setArticles((prev) =>
-      prev.filter((a) => a.id !== id)
-    );
+    try {
+      await apiFetch(`/articles/${id}`, { method: "DELETE" });
+
+      setArticles((prev) =>
+        prev.filter((a) => a.id !== id)
+      );
+    } catch (error: any) {
+      setErrorMessage("Admin role required for this action!");
+    }
   };
 
   const changeStatus = async (
@@ -399,6 +406,21 @@ export default function ArticlesPage() {
         }
         autoHeight
       />
+
+      <Snackbar
+        open={!!errorMessage}
+        autoHideDuration={4000}
+        onClose={() => setErrorMessage(null)}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      >
+        <Alert
+          severity="error"
+          variant="filled"
+          onClose={() => setErrorMessage(null)}
+        >
+          {errorMessage}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }

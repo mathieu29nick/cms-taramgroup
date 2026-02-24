@@ -7,7 +7,7 @@ export const apiFetch = async (
   const res = await fetch(`${API_URL}${endpoint}`, {
     headers: {
       "Content-Type": "application/json",
-      "x-role": "admin"
+      "x-role": "editor"
     },
     ...options,
   });

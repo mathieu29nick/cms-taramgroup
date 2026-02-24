@@ -11,6 +11,8 @@ import {
   DialogContent,
   DialogActions,
   Stack,
+  Snackbar,
+  Alert
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { apiFetch } from "@/services/api";
@@ -34,6 +36,7 @@ interface Article {
 }
 
 export default function CategoriesPage() {
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
   const [articles, setArticles] = useState<Article[]>([]);
   const [open, setOpen] = useState(false);
@@ -68,7 +71,8 @@ export default function CategoriesPage() {
     : 0;
 
   const handleSave = async () => {
-    if (!form.name.trim()) return;
+    try{
+      if (!form.name.trim()) return;
 
     if (editing) {
       await apiFetch(`/categories/${editing.id}`, {
@@ -86,6 +90,11 @@ export default function CategoriesPage() {
     setEditing(null);
     setForm({ name: "", color: "#1976d2" });
     load();
+    } catch(error: any){
+      setErrorMessage("Admin role required for this action!");
+      setOpen(false);
+      setForm({ name: "", color: "#1976d2" });
+    }
   };
 
   const handleDelete = async (id: string) => {
@@ -95,7 +104,8 @@ export default function CategoriesPage() {
       });
       load();
     } catch {
-      alert("Category is used by articles");
+      //Category is used by articles
+      setErrorMessage("Admin role required for this action!");
     }
   };
 
@@ -248,6 +258,20 @@ export default function CategoriesPage() {
           </Button>
         </DialogActions>
       </Dialog>
+      <Snackbar
+        open={!!errorMessage}
+        autoHideDuration={4000}
+        onClose={() => setErrorMessage(null)}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      >
+        <Alert
+          severity="error"
+          variant="filled"
+          onClose={() => setErrorMessage(null)}
+        >
+          {errorMessage}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }
