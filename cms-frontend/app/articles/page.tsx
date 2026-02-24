@@ -59,7 +59,8 @@ export default function ArticlesPage() {
   }, []);
 
   const filtered = useMemo(() => {
-    return articles.filter((a) => {
+    return articles
+    .filter((a) => {
       return (
         (!status || a.status === status) &&
         (!network || a.network === network) &&
@@ -73,6 +74,10 @@ export default function ArticlesPage() {
             .toLowerCase()
             .includes(search.toLowerCase()))
       );
+    })
+    .sort((a, b) => {
+      if (a.featured === b.featured) return 0;
+      return a.featured ? -1 : 1;
     });
   }, [
     articles,
@@ -138,6 +143,14 @@ export default function ArticlesPage() {
     });
   };
 
+  const networkMap = useMemo(() => {
+    const map: Record<string, string> = {};
+    networks.forEach((n) => {
+      map[n.id] = n.name;
+    });
+    return map;
+  }, [networks]);
+
   const columns: GridColDef[] = [
     {
       field: "title",
@@ -180,7 +193,13 @@ export default function ArticlesPage() {
         formatDate(row.createdAt),
     },
     { field: "status", headerName: "Status", width: 130 },
-    { field: "network", headerName: "Network", width: 130 },
+    {
+      field: "network",
+      headerName: "Network",
+      width: 130,
+      valueGetter: (_value, row) =>
+        networkMap[row.network] || "Unknown",
+    },
     {
       field: "featured",
       headerName: "Featured",
@@ -197,10 +216,18 @@ export default function ArticlesPage() {
       headerName: "Actions",
       width: 250,
       renderCell: (params) => (
-        <Box display="flex" gap={1}>
+        <Box 
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            height: "100%",
+            width: "100%",
+            gap: 2
+          }}>
           <Button
             size="small"
             variant="contained"
+            color="warning"
             onClick={() =>
               router.push(
                 `/articles/${params.row.id}`

@@ -21,6 +21,12 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { apiFetch } from "@/services/api";
+import dynamic from "next/dynamic";
+
+const RichEditor = dynamic(
+  () => import("@/components/RichEditor"),
+  { ssr: false }
+);
 
 const schema = z.object({
   title: z.string().min(5, "Minimum 5 characters"),
@@ -163,16 +169,24 @@ export default function ArticleForm({
             {...register("author")}
           />
 
-          <TextField
-            label="Content"
-            fullWidth
-            multiline
-            rows={8}
-            margin="normal"
-            {...register("content")}
-            error={!!errors.content}
-            helperText={errors.content?.message}
-          />
+          <FormControl fullWidth margin="normal">
+            <Typography variant="subtitle2" mb={1}>
+              Content
+            </Typography>
+
+            <RichEditor
+              value={values.content}
+              onChange={(val) =>
+                setValue("content", val)
+              }
+            />
+
+            {errors.content && (
+              <Typography color="error" variant="caption">
+                {errors.content.message}
+              </Typography>
+            )}
+          </FormControl>
 
           <FormControl fullWidth margin="normal">
             <InputLabel>Categories</InputLabel>
@@ -302,9 +316,12 @@ export default function ArticleForm({
           })}
         </Box>
 
-        <Typography mt={3}>
-          {values.content}
-        </Typography>
+        <Box
+          mt={3}
+          dangerouslySetInnerHTML={{
+            __html: values.content,
+          }}
+        />
       </Box>
     </Box>
   );
