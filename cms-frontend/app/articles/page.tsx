@@ -20,6 +20,7 @@ import {
   GridRowSelectionModel,
 } from "@mui/x-data-grid";
 import { useEffect, useMemo, useState } from "react";
+import { useAppStore } from "@/stores/useAppStore";
 import { apiFetch } from "@/services/api";
 import dynamic from "next/dynamic";
 import { formatDate } from "@/utils/utils";
@@ -36,6 +37,7 @@ const DataGrid = dynamic(
 
 export default function ArticlesPage() {
   const router = useRouter();
+  const role = useAppStore((s) => s.role);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selectionModel, setSelectionModel] =
     useState<GridRowSelectionModel>({
@@ -55,10 +57,18 @@ export default function ArticlesPage() {
   const [featuredOnly, setFeaturedOnly] = useState(false);
 
   useEffect(() => {
-    apiFetch("/articles").then((res) => setArticles(res.data));
-    apiFetch("/categories").then(setCategories);
-    apiFetch("/networks").then(setNetworks);
-  }, []);
+    const loadData = async () => {
+      const articlesRes = await apiFetch("/articles");
+      const categoriesRes = await apiFetch("/categories");
+      const networksRes = await apiFetch("/networks");
+
+      setArticles(articlesRes.data || []);
+      setCategories(categoriesRes || []);
+      setNetworks(networksRes || []);
+    };
+
+    loadData();
+  }, [role]);
 
   const filtered = useMemo(() => {
     return articles
@@ -87,7 +97,7 @@ export default function ArticlesPage() {
     status,
     selectedCategories,
     network,
-    featuredOnly,
+    featuredOnly
   ]);
 
   const handleDelete = async (id: string) => {

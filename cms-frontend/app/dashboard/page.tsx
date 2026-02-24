@@ -16,6 +16,7 @@ import {
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 import { apiFetch } from "@/services/api";
+import { useAppStore } from "@/stores/useAppStore";
 import {
   Pie,
   Cell,
@@ -39,6 +40,8 @@ const PieChart = dynamic(
 );
 
 export default function Dashboard() {
+  const role = useAppStore((s) => s.role);
+
   const [articles, setArticles] =
     useState<Article[]>([]);
   const [categories, setCategories] =
@@ -50,7 +53,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     load();
-  }, []);
+  }, [role]);
 
   const load = async () => {
     const arts =

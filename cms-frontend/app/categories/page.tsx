@@ -15,6 +15,7 @@ import {
   Alert
 } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useAppStore } from "@/stores/useAppStore";
 import { apiFetch } from "@/services/api";
 import {
   DataGrid,
@@ -36,6 +37,7 @@ interface Article {
 }
 
 export default function CategoriesPage() {
+  const role = useAppStore.getState().role;
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
   const [articles, setArticles] = useState<Article[]>([]);
@@ -104,8 +106,12 @@ export default function CategoriesPage() {
       });
       load();
     } catch {
-      //Category is used by articles
-      setErrorMessage("Admin role required for this action!");
+      if(role === "editor"){
+        setErrorMessage("Admin role required for this action!");
+      }else{
+        setErrorMessage("Category is used by articles");
+      }
+      
     }
   };
 

@@ -1,5 +1,6 @@
 import MuiProvider from "@/components/MuiProvider";
 import Link from "next/link";
+import RoleToggle from "@/components/RoleToogle";
 
 export default function RootLayout({
   children,
@@ -26,7 +27,7 @@ export default function RootLayout({
                 flexDirection: "column",
               }}
             >
-              <h2>CMS Admin</h2>
+              <h2>CMS Dashboard</h2>
 
               <nav
                 style={{
@@ -42,6 +43,7 @@ export default function RootLayout({
                 <Link style={{ textDecoration: "none", color: "white"}} href="/notifications">Notifications</Link>
                 <Link style={{ textDecoration: "none", color: "white"}} href="/import">Import</Link>
               </nav>
+              <RoleToggle />
             </aside>
 
             <main
