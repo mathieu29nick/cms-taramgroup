@@ -1,10 +1,92 @@
 [
   {
-  "title": "Article importé",
-  "content": "Contenu de l'article...",
-  "excerpt": "Résumé",
-  "author": "Auteur",
-  "category": "nom-categorie",
-  "network": "nom-reseau"
+    "title": "AI Revolution in 2025",
+    "content": "Artificial intelligence continues to evolve rapidly with new breakthroughs transforming industries worldwide. This article explores trends and predictions for the coming years.",
+    "excerpt": "AI trends and predictions.",
+    "author": "John Doe",
+    "category": [
+      "cat-1"
+    ],
+    "network": "2"
+  },
+  {
+    "title": "AI Revolution in 2025",
+    "content": "Artificial intelligence continues to evolve rapidly with new breakthroughs transforming industries worldwide. This article explores trends and predictions for the coming years.",
+    "excerpt": "AI trends and predictions.",
+    "author": "John Doe",
+    "category": [
+      "cat-1"
+    ],
+    "network": "1"
+  },
+  {
+    "title": "AI Revolution in 2025",
+    "content": "Artificial intelligence continues to evolve rapidly with new breakthroughs transforming industries worldwide. This article explores trends and predictions for the coming years.",
+    "excerpt": "AI trends and predictions.",
+    "author": "John Doe",
+    "category": [
+      "cat-1"
+    ],
+    "network": "1"
+  },
+  {
+    "title": "Startup Growth Strategies",
+    "content": "Startups need structured growth strategies to scale successfully. This article explains key frameworks and real-world examples for sustainable expansion.",
+    "excerpt": "How startups grow effectively.",
+    "author": "Jane Smith",
+    "category": [
+      "cat-2"
+    ],
+    "network": "1"
+  },
+  {
+    "title": "Digital Marketing Trends",
+    "content": "Digital marketing evolves constantly. Learn about SEO, paid ads, and content marketing strategies that work in modern competitive markets.",
+    "excerpt": "Marketing strategies overview.",
+    "author": "Alex Brown",
+    "category": [
+      "cat-3"
+    ],
+    "network": "2"
+  },
+  {
+    "title": "Cloud Computing Essentials",
+    "content": "Cloud platforms provide scalable infrastructure and flexible deployment models for businesses of all sizes. This article covers benefits and challenges.",
+    "excerpt": "Understanding cloud computing.",
+    "author": "Emma Wilson",
+    "category": [
+      "cat-1"
+    ],
+    "network": "2"
+  },
+  {
+    "title": "The Future of Machine Learning",
+    "content": "Machine learning is becoming a core component of digital transformation strategies. Organizations are investing heavily in automation and predictive analytics to stay competitive.",
+    "excerpt": "Exploring machine learning advancements.",
+    "author": "Michael Carter",
+    "category": [
+      "cat-1"
+    ],
+    "network": "2"
+  },
+  {
+    "title": "Building High-Performance Teams",
+    "content": "Successful companies prioritize team dynamics, communication, and leadership development to drive sustainable performance and innovation.",
+    "excerpt": "Team productivity insights.",
+    "author": "Sarah Johnson",
+    "category": [
+      "cat-2"
+    ],
+    "network": "2"
+  },
+  {
+    "title": "SEO Optimization Guide 2026",
+    "content": "Search engine optimization remains critical for digital visibility. This guide explores advanced keyword strategies and technical improvements.",
+    "excerpt": "SEO best practices.",
+    "author": "Daniel Lee",
+    "category": [
+      "cat-3"
+    ],
+    "network": "1"
   }
 ]
