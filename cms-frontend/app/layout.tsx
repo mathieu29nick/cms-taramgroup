@@ -40,6 +40,7 @@ export default function RootLayout({
                 <Link style={{ textDecoration: "none", color: "white"}} href="/dashboard">Dashboard</Link>
                 <Link style={{ textDecoration: "none", color: "white"}} href="/articles">Articles</Link>
                 <Link style={{ textDecoration: "none", color: "white"}} href="/categories">Categories</Link>
+                <Link style={{ textDecoration: "none", color: "white"}} href="/networks">Networks</Link>
                 <Link style={{ textDecoration: "none", color: "white"}} href="/notifications">Notifications</Link>
                 <Link style={{ textDecoration: "none", color: "white"}} href="/import">Import</Link>
               </nav>
