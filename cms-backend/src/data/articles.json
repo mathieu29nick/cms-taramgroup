@@ -1,6 +1,38 @@
 [
   {
+    "id": "art-10012",
+    "title": "AI Revolution in 2025",
+    "content": "Artificial intelligence continues to evolve rapidly with new breakthroughs transforming industries worldwide. This article explores trends and predictions for the coming years.",
+    "excerpt": "AI trends and predictions.",
+    "author": "John Doe",
+    "categories": [
+      "cat-1"
+    ],
+    "network": "2",
+    "status": "published",
+    "featured": false,
+    "publishedAt": "2024-01-01T10:00:00.000Z",
+    "createdAt": "2024-01-01T09:00:00.000Z",
+    "updatedAt": "2024-01-01T09:00:00.000Z"
+  },
+  {
     "id": "art-1",
+    "title": "AI Revolution in 2025",
+    "content": "Artificial intelligence continues to evolve rapidly with new breakthroughs transforming industries worldwide. This article explores trends and predictions for the coming years.",
+    "excerpt": "AI trends and predictions.",
+    "author": "John Doe",
+    "categories": [
+      "cat-1"
+    ],
+    "network": "1",
+    "status": "published",
+    "featured": false,
+    "publishedAt": "2024-01-01T10:00:00.000Z",
+    "createdAt": "2024-01-01T09:00:00.000Z",
+    "updatedAt": "2026-02-24T11:19:05.589Z"
+  },
+  {
+    "id": "art-140",
     "title": "AI Revolution in 2025",
     "content": "Artificial intelligence continues to evolve rapidly with new breakthroughs transforming industries worldwide. This article explores trends and predictions for the coming years.",
     "excerpt": "AI trends and predictions.",
@@ -16,7 +48,7 @@
     "updatedAt": "2024-01-01T09:00:00.000Z"
   },
   {
-    "id": "art-2",
+    "id": "art-25045",
     "title": "Startup Growth Strategies",
     "content": "Startups need structured growth strategies to scale successfully. This article explains key frameworks and real-world examples for sustainable expansion.",
     "excerpt": "How startups grow effectively.",
@@ -32,7 +64,7 @@
     "updatedAt": "2024-02-01T09:00:00.000Z"
   },
   {
-    "id": "art-3",
+    "id": "art-3754",
     "title": "Digital Marketing Trends",
     "content": "Digital marketing evolves constantly. Learn about SEO, paid ads, and content marketing strategies that work in modern competitive markets.",
     "excerpt": "Marketing strategies overview.",
@@ -48,7 +80,7 @@
     "updatedAt": "2024-03-01T09:00:00.000Z"
   },
   {
-    "id": "art-4",
+    "id": "art-44540",
     "title": "Cloud Computing Essentials",
     "content": "Cloud platforms provide scalable infrastructure and flexible deployment models for businesses of all sizes. This article covers benefits and challenges.",
     "excerpt": "Understanding cloud computing.",
@@ -64,35 +96,291 @@
     "updatedAt": "2024-04-01T09:00:00.000Z"
   },
   {
-    "id": "a3c97b39-7ca1-4a18-9a14-e97eccc4aebf",
-    "title": "ddddddddddddddddd",
-    "content": "ddddddddddddddddddddddddddddddddddddddddddddddsssssssssssssssssssssssssssssssssss",
-    "excerpt": "ddddddddddddddddddddddddd",
-    "author": "dddddddddddddddddd",
-    "categories": [
-      "cat-2"
-    ],
-    "network": "2",
-    "featured": false,
-    "status": "draft",
-    "publishedAt": null,
-    "createdAt": "2026-02-23T14:01:29.381Z",
-    "updatedAt": "2026-02-23T14:01:29.381Z"
-  },
-  {
-    "id": "f26e0b30-1d46-4bae-b6f2-f72367d7e6aa",
-    "title": "dfdfdf",
-    "content": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
-    "excerpt": "ddddddddddddddddddddddddd",
-    "author": "ddddddddddd",
+    "id": "art-54545",
+    "title": "The Future of Machine Learning",
+    "content": "Machine learning is becoming a core component of digital transformation strategies. Organizations are investing heavily in automation and predictive analytics to stay competitive.",
+    "excerpt": "Exploring machine learning advancements.",
+    "author": "Michael Carter",
     "categories": [
       "cat-1"
     ],
     "network": "2",
+    "status": "published",
     "featured": false,
+    "publishedAt": "2024-05-01T10:00:00.000Z",
+    "createdAt": "2024-05-01T09:00:00.000Z",
+    "updatedAt": "2024-05-01T09:00:00.000Z"
+  },
+  {
+    "id": "art-6454",
+    "title": "Building High-Performance Teams",
+    "content": "Successful companies prioritize team dynamics, communication, and leadership development to drive sustainable performance and innovation.",
+    "excerpt": "Team productivity insights.",
+    "author": "Sarah Johnson",
+    "categories": [
+      "cat-2"
+    ],
+    "network": "2",
     "status": "draft",
+    "featured": false,
     "publishedAt": null,
-    "createdAt": "2026-02-23T14:03:00.521Z",
-    "updatedAt": "2026-02-23T14:03:00.521Z"
+    "createdAt": "2024-05-05T09:00:00.000Z",
+    "updatedAt": "2024-05-05T09:00:00.000Z"
+  },
+  {
+    "id": "art-7450",
+    "title": "SEO Optimization Guide 2026",
+    "content": "Search engine optimization remains critical for digital visibility. This guide explores advanced keyword strategies and technical improvements.",
+    "excerpt": "SEO best practices.",
+    "author": "Daniel Lee",
+    "categories": [
+      "cat-3"
+    ],
+    "network": "1",
+    "status": "published",
+    "featured": true,
+    "publishedAt": "2024-06-01T10:00:00.000Z",
+    "createdAt": "2024-06-01T09:00:00.000Z",
+    "updatedAt": "2024-06-01T09:00:00.000Z"
+  },
+  {
+    "id": "art-840",
+    "title": "Cybersecurity in Modern Enterprises",
+    "content": "Security threats are increasing in sophistication. Businesses must adopt proactive defense strategies and continuous monitoring systems.",
+    "excerpt": "Protecting digital assets.",
+    "author": "Laura White",
+    "categories": [
+      "cat-1"
+    ],
+    "network": "2",
+    "status": "published",
+    "featured": false,
+    "publishedAt": "2024-06-10T10:00:00.000Z",
+    "createdAt": "2024-06-10T09:00:00.000Z",
+    "updatedAt": "2024-06-10T09:00:00.000Z"
+  },
+  {
+    "id": "art-9454",
+    "title": "Content Marketing Mastery",
+    "content": "Content marketing builds trust and authority. High-quality storytelling combined with data-driven insights maximizes audience engagement.",
+    "excerpt": "Winning with content strategy.",
+    "author": "Olivia Martin",
+    "categories": [
+      "cat-3"
+    ],
+    "network": "1",
+    "status": "archived",
+    "featured": false,
+    "publishedAt": "2024-06-15T10:00:00.000Z",
+    "createdAt": "2024-06-15T09:00:00.000Z",
+    "updatedAt": "2024-06-15T09:00:00.000Z"
+  },
+  {
+    "id": "art-104545",
+    "title": "Scaling SaaS Businesses",
+    "content": "SaaS companies must optimize recurring revenue, customer retention, and operational efficiency to scale effectively.",
+    "excerpt": "SaaS growth fundamentals.",
+    "author": "James Walker",
+    "categories": [
+      "cat-2"
+    ],
+    "network": "2",
+    "status": "published",
+    "featured": true,
+    "publishedAt": "2024-07-01T10:00:00.000Z",
+    "createdAt": "2024-07-01T09:00:00.000Z",
+    "updatedAt": "2024-07-01T09:00:00.000Z"
+  },
+  {
+    "id": "art-11545",
+    "title": "AI in Healthcare",
+    "content": "Healthcare innovation is being accelerated by AI-powered diagnostics and personalized treatment planning.",
+    "excerpt": "AI transforming healthcare.",
+    "author": "Sophia Adams",
+    "categories": [
+      "cat-1"
+    ],
+    "network": "2",
+    "status": "draft",
+    "featured": false,
+    "publishedAt": null,
+    "createdAt": "2024-07-10T09:00:00.000Z",
+    "updatedAt": "2024-07-10T09:00:00.000Z"
+  },
+  {
+    "id": "art-1785",
+    "title": "AI Revolution in 2025",
+    "content": "Artificial intelligence continues to evolve rapidly with new breakthroughs transforming industries worldwide. This article explores trends and predictions for the coming years.",
+    "excerpt": "AI trends and predictions.",
+    "author": "John Doe",
+    "categories": [
+      "cat-1"
+    ],
+    "network": "1",
+    "status": "published",
+    "featured": true,
+    "publishedAt": "2024-01-01T10:00:00.000Z",
+    "createdAt": "2024-01-01T09:00:00.000Z",
+    "updatedAt": "2024-01-01T09:00:00.000Z"
+  },
+  {
+    "id": "art-245",
+    "title": "Startup Growth Strategies",
+    "content": "Startups need structured growth strategies to scale successfully. This article explains key frameworks and real-world examples for sustainable expansion.",
+    "excerpt": "How startups grow effectively.",
+    "author": "Jane Smith",
+    "categories": [
+      "cat-2"
+    ],
+    "network": "1",
+    "status": "draft",
+    "featured": false,
+    "publishedAt": null,
+    "createdAt": "2024-02-01T09:00:00.000Z",
+    "updatedAt": "2024-02-01T09:00:00.000Z"
+  },
+  {
+    "id": "art-302",
+    "title": "Digital Marketing Trends",
+    "content": "Digital marketing evolves constantly. Learn about SEO, paid ads, and content marketing strategies that work in modern competitive markets.",
+    "excerpt": "Marketing strategies overview.",
+    "author": "Alex Brown",
+    "categories": [
+      "cat-3"
+    ],
+    "network": "2",
+    "status": "published",
+    "featured": false,
+    "publishedAt": "2024-03-01T10:00:00.000Z",
+    "createdAt": "2024-03-01T09:00:00.000Z",
+    "updatedAt": "2024-03-01T09:00:00.000Z"
+  },
+  {
+    "id": "art-410",
+    "title": "Cloud Computing Essentials",
+    "content": "Cloud platforms provide scalable infrastructure and flexible deployment models for businesses of all sizes. This article covers benefits and challenges.",
+    "excerpt": "Understanding cloud computing.",
+    "author": "Emma Wilson",
+    "categories": [
+      "cat-1"
+    ],
+    "network": "2",
+    "status": "archived",
+    "featured": true,
+    "publishedAt": "2024-04-01T10:00:00.000Z",
+    "createdAt": "2024-04-01T09:00:00.000Z",
+    "updatedAt": "2024-04-01T09:00:00.000Z"
+  },
+  {
+    "id": "art-515",
+    "title": "The Future of Machine Learning",
+    "content": "Machine learning is becoming a core component of digital transformation strategies. Organizations are investing heavily in automation and predictive analytics to stay competitive.",
+    "excerpt": "Exploring machine learning advancements.",
+    "author": "Michael Carter",
+    "categories": [
+      "cat-1"
+    ],
+    "network": "1",
+    "status": "published",
+    "featured": false,
+    "publishedAt": "2024-05-01T10:00:00.000Z",
+    "createdAt": "2024-05-01T09:00:00.000Z",
+    "updatedAt": "2024-05-01T09:00:00.000Z"
+  },
+  {
+    "id": "art-655",
+    "title": "Building High-Performance Teams",
+    "content": "Successful companies prioritize team dynamics, communication, and leadership development to drive sustainable performance and innovation.",
+    "excerpt": "Team productivity insights.",
+    "author": "Sarah Johnson",
+    "categories": [
+      "cat-2"
+    ],
+    "network": "2",
+    "status": "draft",
+    "featured": false,
+    "publishedAt": null,
+    "createdAt": "2024-05-05T09:00:00.000Z",
+    "updatedAt": "2024-05-05T09:00:00.000Z"
+  },
+  {
+    "id": "art-80",
+    "title": "SEO Optimization Guide 2026",
+    "content": "Search engine optimization remains critical for digital visibility. This guide explores advanced keyword strategies and technical improvements.",
+    "excerpt": "SEO best practices.",
+    "author": "Daniel Lee",
+    "categories": [
+      "cat-3"
+    ],
+    "network": "1",
+    "status": "published",
+    "featured": true,
+    "publishedAt": "2024-06-01T10:00:00.000Z",
+    "createdAt": "2024-06-01T09:00:00.000Z",
+    "updatedAt": "2024-06-01T09:00:00.000Z"
+  },
+  {
+    "id": "art-70",
+    "title": "Cybersecurity in Modern Enterprises",
+    "content": "Security threats are increasing in sophistication. Businesses must adopt proactive defense strategies and continuous monitoring systems.",
+    "excerpt": "Protecting digital assets.",
+    "author": "Laura White",
+    "categories": [
+      "cat-1"
+    ],
+    "network": "2",
+    "status": "published",
+    "featured": false,
+    "publishedAt": "2024-06-10T10:00:00.000Z",
+    "createdAt": "2024-06-10T09:00:00.000Z",
+    "updatedAt": "2024-06-10T09:00:00.000Z"
+  },
+  {
+    "id": "art-65",
+    "title": "Content Marketing Mastery",
+    "content": "Content marketing builds trust and authority. High-quality storytelling combined with data-driven insights maximizes audience engagement.",
+    "excerpt": "Winning with content strategy.",
+    "author": "Olivia Martin",
+    "categories": [
+      "cat-3"
+    ],
+    "network": "1",
+    "status": "archived",
+    "featured": false,
+    "publishedAt": "2024-06-15T10:00:00.000Z",
+    "createdAt": "2024-06-15T09:00:00.000Z",
+    "updatedAt": "2024-06-15T09:00:00.000Z"
+  },
+  {
+    "id": "art-0180",
+    "title": "Scaling SaaS Businesses",
+    "content": "SaaS companies must optimize recurring revenue, customer retention, and operational efficiency to scale effectively.",
+    "excerpt": "SaaS growth fundamentals.",
+    "author": "James Walker",
+    "categories": [
+      "cat-2"
+    ],
+    "network": "2",
+    "status": "published",
+    "featured": true,
+    "publishedAt": "2024-07-01T10:00:00.000Z",
+    "createdAt": "2024-07-01T09:00:00.000Z",
+    "updatedAt": "2024-07-01T09:00:00.000Z"
+  },
+  {
+    "id": "art-18",
+    "title": "AI in Healthcare",
+    "content": "Healthcare innovation is being accelerated by AI-powered diagnostics and personalized treatment planning.",
+    "excerpt": "AI transforming healthcare.",
+    "author": "Sophia Adams",
+    "categories": [
+      "cat-1"
+    ],
+    "network": "1",
+    "status": "draft",
+    "featured": false,
+    "publishedAt": null,
+    "createdAt": "2024-07-10T09:00:00.000Z",
+    "updatedAt": "2024-07-10T09:00:00.000Z"
   }
 ]

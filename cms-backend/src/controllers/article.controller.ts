@@ -34,7 +34,7 @@ export const getArticles = async (
     featured,
     search,
     page = '1',
-    limit = '20'
+    limit = '52'
   } = req.query as Record<string, string>;
 
   if (status)
