@@ -44,7 +44,9 @@ export default function Dashboard() {
   const [categories, setCategories] =
     useState<any[]>([]);
   const [notifications, setNotifications] =
-  useState<any[]>([]);
+    useState<any[]>([]);
+  const [networks, setNetworks] = 
+    useState<any[]>([]);
 
   useEffect(() => {
     load();
@@ -57,7 +59,10 @@ export default function Dashboard() {
       await apiFetch("/categories");
     const notifs =
       await apiFetch("/notifications");
+    const networks = 
+    await apiFetch("/networks");
 
+    setNetworks(networks || []);
     setArticles(arts.data || []);
     setCategories(cats);
     setNotifications(notifs || []);
@@ -80,16 +85,18 @@ export default function Dashboard() {
   }, [articles]);
 
   const byNetwork = useMemo(() => {
-    const map: Record<string, number> =
-      {};
-
+    const map: Record<string, number> = {};
     articles.forEach((a) => {
-      map[a.network] =
-        (map[a.network] || 0) + 1;
+      const networkName =
+        networks.find((n) => n.id === a.network)
+          ?.name || "Unknown";
+
+      map[networkName] =
+        (map[networkName] || 0) + 1;
     });
 
     return map;
-  }, [articles]);
+  }, [articles, networks]);
 
   const categoryStats = useMemo(() => {
     const map: Record<string, number> =
@@ -196,7 +203,7 @@ export default function Dashboard() {
             ([network, count]) => (
               <Chip
                 key={network}
-                label={`${network}: ${count}`}
+                label={`${network} : ${count}`}
                 sx={{ mr: 1, mb: 1 }}
               />
             )
