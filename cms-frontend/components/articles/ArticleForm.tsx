@@ -280,7 +280,7 @@ export default function ArticleForm({
         </Typography>
 
         <Typography variant="subtitle1" color="text.secondary">
-          {values.author}
+          By : {values.author}
         </Typography>
 
         <Box mt={2}>
@@ -292,7 +292,11 @@ export default function ArticleForm({
               <Chip
                 key={id}
                 label={cat?.name}
-                sx={{ mr: 1 }}
+                sx={{ 
+                  mr: 1,
+                  color: "#fff",
+                  backgroundColor: cat?.color,
+                }}
               />
             );
           })}

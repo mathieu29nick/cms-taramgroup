@@ -20,7 +20,9 @@ import {
 import { useEffect, useMemo, useState } from "react";
 import { apiFetch } from "@/services/api";
 import dynamic from "next/dynamic";
+import { formatDate } from "@/utils/utils";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const DataGrid = dynamic(
   () =>
@@ -137,7 +139,46 @@ export default function ArticlesPage() {
   };
 
   const columns: GridColDef[] = [
-    { field: "title", headerName: "Title", flex: 1 },
+    {
+      field: "title",
+      headerName: "Title",
+      flex: 1,
+      renderCell: (params) => (
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            height: "100%",
+            width: "100%",
+          }}
+        >
+          <Link
+            href={`/articles/${params.row.id}`}
+            style={{ textDecoration: "none" }}
+          >
+            <Typography
+              color="primary"
+              fontWeight={500}
+              sx={{
+                cursor: "pointer",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              }}
+            >
+              {params.value}
+            </Typography>
+          </Link>
+        </Box>
+      ),
+    },
+    {
+      field: "createdAt",
+      headerName: "Date",
+      width: 130,
+      valueGetter: (_value, row) =>
+        formatDate(row.createdAt),
+    },
     { field: "status", headerName: "Status", width: 130 },
     { field: "network", headerName: "Network", width: 130 },
     {
